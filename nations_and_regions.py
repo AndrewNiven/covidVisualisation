@@ -1,6 +1,5 @@
 from parse_data import parse_data, Area
 from plot_animation import plot_animation
-from datetime import datetime
 
 def plot_nations_and_regions():
 
@@ -20,3 +19,6 @@ def plot_nations_and_regions():
     # end_time = datetime.now()
 
     # print((end_time - start_time).seconds)
+
+if __name__ == "__main__":
+    plot_nations_and_regions()

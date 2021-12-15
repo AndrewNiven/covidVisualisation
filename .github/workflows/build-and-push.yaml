@@ -1,0 +1,9 @@
+name: build-and-push
+on: [push]
+  # schedule: 
+  #   - cron: '0 20 * * *'
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      run: python3 nations_and_regions.py
