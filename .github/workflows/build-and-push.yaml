@@ -2,8 +2,6 @@ name: build-and-push
 on: [push]
   # schedule: 
   #   - cron: '0 20 * * *'
-inputs:
-  file-path:
     
 jobs: 
   build:
