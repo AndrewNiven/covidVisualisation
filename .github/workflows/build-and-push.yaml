@@ -2,8 +2,25 @@ name: build-and-push
 on: [push]
   # schedule: 
   #   - cron: '0 20 * * *'
+inputs:
+  file-path:
+    
 jobs: 
   build:
-    runs-on: ubuntu-latest
+    name: "Python 3.7"
+    runs-on: "ubuntu-latest"
+
     steps:
-      - run: python3 nations_and_regions.py
+      - uses: "actions/checkout@v2"
+      - uses: "actions/setup-python@v2"
+        with:
+          python-version: 3.7
+      - name: "Install dependencies"
+        run: |
+          python -VV
+          python -m site
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --upgrade coverage[toml] virtualenv tox tox-gh-actions          
+
+      - name: "Run python"
+        run: "python3 nations_and_regions.py"
