@@ -13,9 +13,14 @@ jobs:
       - uses: "actions/setup-python@v2"
         with:
           python-version: 3.7
-      - name: "Install dependencies"
+      - name: update_graph
         run: |
           pip3 install -r requirements.txt 
-
-      - name: "Run python"
-        run: "python3 nations_and_regions.py"
+          python3 nations_and_regions.py
+      - name: push_to_repo
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions"
+          git add --all
+          git commit -m "Update graph"
+          git push

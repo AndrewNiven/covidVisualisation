@@ -68,7 +68,7 @@ def plot_animation(areas, file_base_name, events_file):
 
     # ani.save(f"/static/images/covid-visualisation-{file_base_name}-{file_name_suffix}-{dt.today().strftime(constants.DATE_FORMAT)}.gif", writer='imagemagick', fps=1000/constants.MS_PER_FRAME)
     
-    ani.save("static/images/covid-visualisation.gif", writer='imagemagick', fps=1000/constants.MS_PER_FRAME)
+    ani.save("webapp/static/images/covid-visualisation.gif", writer='imagemagick', fps=1000/constants.MS_PER_FRAME)
 
 
 def create_graph(ax, graph, areas, events_by_date):
@@ -124,8 +124,6 @@ def create_graph(ax, graph, areas, events_by_date):
     y = [area.normalised_seven_day_sums[constants.PLOT_START_DATE] for name, area in areas.items()]
     size = [area.population*10 for name, area in areas.items()]
     names = [name for name, area in areas.items()]
-
-    print(names)
 
     graph.scatter_plot = ax.scatter(x,y, s=size, c=palette, zorder = 20)
 

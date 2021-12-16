@@ -2,7 +2,7 @@ from datetime import datetime as dt, timedelta
 
 DATE_FORMAT = "%Y-%m-%d"
 START_DATE = dt.strptime("2020-04-01",DATE_FORMAT)
-PLOT_START_DATE = dt.strptime("2021-01-01",DATE_FORMAT)
+PLOT_START_DATE = dt.strptime("2021-12-10",DATE_FORMAT)
 
 test=True
 
