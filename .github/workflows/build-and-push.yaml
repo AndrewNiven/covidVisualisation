@@ -24,3 +24,12 @@ jobs:
           git add --all
           git commit -m "Update graph"
           git push
+          
+      - uses: "actions/checkout@v2"
+      - uses: azure/login@v1
+        with: 
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: push_to_webapp
+        run: |
+          cd webapp
+          az webapp up
